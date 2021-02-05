@@ -13,7 +13,6 @@
 }
 
 /* Navbar */
-
 .navbar {
   padding: 20px;
   display: flex;
@@ -21,6 +20,7 @@
   max-width: 1000px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  background-color: #ddd;
 }
 
 .navbar h1 {
@@ -38,39 +38,211 @@
 }
 
 .navbar a:hover {
-  color: #f1356d;
+  color: #8884d8;
 }
 
-/* Table observations per employee */
+/* Table styles */
 
-.title-observations-per-employee {
-  text-align: left;
-  font-family: "Comfortaa";
-  font-size: medium;
-  padding: 8px;
+.items-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
-.table-observations-per-employee {
+.items-centered button {
+  margin-left: 50px;
+  cursor: pointer;
+  padding: 7px;
+}
+
+.items-centered a:hover {
+  color: #8884d8;
+}
+
+.table-overflow {
+  overflow-x: auto;
+}
+
+.table-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-style {
   text-align: center;
-  font-family: "Comfortaa";
   border-collapse: collapse;
   border: 3px solid #ddd;
   width: 50%;
 }
 
-.table-observations-per-employee td, .table-observations-per-employee th {
+.table-style td, .table-style th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-.table-observations-per-employee tr:nth-child(even){background-color: #f2f2f2;}
+.table-style tr:nth-child(even){background-color: #f2f2f2;}
 
-#table-observations-per-employee tr:hover {background-color: #ddd;}
+.table-style tr:hover {background-color: #ddd;}
 
-.table-observations-per-employee th {
+.table-style th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  color: black;
+  color: white;
+  background-color: #8884d8;
   font-size: small;
 }
+
+.table-style button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Modals */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.modal {
+  max-width: 550px;
+  margin: 100px auto;
+  background: white;
+  border-radius: 1px;
+  text-align: center;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.modal button {
+  color: #444;
+  border-color: #444;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-right: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.modal p {
+  color: #444;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 10px;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  text-align: center;
+}
+
+.form label {
+  text-align: left;
+  display: block;
+}
+
+.form input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.auth-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  text-align: center;
+  border: 1px solid;
+}
+
+.auth-form label {
+  text-align: right;
+  display: inline-block;
+  width: 170px;
+  margin-right: 10px;
+}
+
+.auth-form input {
+  width: auto;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.auth-form p {
+  text-align: right;
+  width: 190px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.auth-form button {
+  color: #444;
+  border-color: #444;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: 1px solid;
+  background-color: transparent;
+  margin-right: 30px;
+  margin-left: 30px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.welcome {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Home for employees table and graph */
+
+@media screen and (min-width: 1000px) and (max-width: 2500px) {
+  .half-right {
+    float: right;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .half-right {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 2500px) {
+  .half-left {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .half-left {
+    width: 100%;
+  }
+}
+
+

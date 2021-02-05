@@ -1,19 +1,31 @@
-import { useState } from 'react';
-import ObservationsTable from './ObservationsTable';
+import { useEffect } from 'react';
+import ObservationsEmployeeTable from './ObservationsEmployeeTable';
+import ObservationsGraph from './ObservationsGraph';
+import { useDispatch, useSelector } from 'react-redux';
+import { getObservationsPerEmployee } from '../../store/actions/detailActions';
+import { Redirect } from 'react-router-dom';
 
 const Home = () => {
-  const [obsEmpleado, setObsEmpleado] = useState([
-    { id: 1, empleado: 'Felipe', registradas: 1, aceptadas: 2, rechazadas: 3 },
-    { id: 2, empleado: 'Ricardo', registradas: 2, aceptadas: 3, rechazadas: 1 },
-    { id: 3, empleado: 'Pablo', registradas: 1, aceptadas: 3, rechazadas: 2 },
-    { id: 4, empleado: 'Giacomo', registradas: 3, aceptadas: 1, rechazadas: 2 },
-    { id: 5, empleado: 'Carla', registradas: 2, aceptadas: 1, rechazadas: 3 },
-  ])
+  const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(getObservationsPerEmployee());
+  }, [dispatch]);
+
+  if (!isAuthenticated) {
+    return <Redirect to="/login" />
+  }
 
   return (
-    <div className="home">
-      <h2 className="title-observations-per-employee">Observaciones por empleado</h2>
-      <ObservationsTable obsEmpleado={obsEmpleado} />
+    <div >
+      <div className="half-left">
+        <ObservationsEmployeeTable />
+      </div>
+      <div className="half-right">
+        <ObservationsGraph />
+      </div>
+
     </div>
   );
 }
