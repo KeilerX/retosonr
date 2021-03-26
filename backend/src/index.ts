@@ -20,7 +20,7 @@ createConnection().then(async () => {
   app.use('/', routes);
 
   //Run this once
-  /*   const statusRepository = getRepository(Status);
+    /* const statusRepository = getRepository(Status);
     const status1 = new Status();
     status1.nombre = "registrada";
     await statusRepository.save(status1);

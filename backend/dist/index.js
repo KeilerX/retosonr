@@ -56,18 +56,18 @@ typeorm_1.createConnection().then(function () { return __awaiter(void 0, void 0,
         //Routes
         app.use('/', routes_1.default);
         //Run this once
-        /*   const statusRepository = getRepository(Status);
-          const status1 = new Status();
-          status1.nombre = "registrada";
-          await statusRepository.save(status1);
-        
-          const status2 = new Status();
-          status2.nombre = "aceptada";
-          await statusRepository.save(status2);
-        
-          const status3 = new Status();
-          status3.nombre = "rechazada";
-          await statusRepository.save(status3); */
+        /* const statusRepository = getRepository(Status);
+        const status1 = new Status();
+        status1.nombre = "registrada";
+        await statusRepository.save(status1);
+      
+        const status2 = new Status();
+        status2.nombre = "aceptada";
+        await statusRepository.save(status2);
+      
+        const status3 = new Status();
+        status3.nombre = "rechazada";
+        await statusRepository.save(status3); */
         //End
         app.listen(PORT, function () {
             console.log("Server running on port " + PORT);
